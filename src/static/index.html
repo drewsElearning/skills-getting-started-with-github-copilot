@@ -3,46 +3,100 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mergington High School Activities</title>
+    <meta name="theme-color" content="#f4f6f2" />
+    <title>Mergington High School | Activities</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+  <body id="top">
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="school-brand" href="/" aria-label="Mergington High School home">
+          <span class="brand-mark" aria-hidden="true">M</span>
+          <span class="brand-copy">
+            <strong>Mergington</strong>
+            <span>HIGH SCHOOL</span>
+          </span>
+        </a>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="#activities-container">Activities</a>
+          <a class="nav-action" href="#signup-container">Find your activity <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
     </header>
-
     <main>
-      <section id="activities-container">
-        <h3>Available Activities</h3>
-        <div id="activities-list">
-          <!-- Activities will be loaded here -->
-          <p>Loading activities...</p>
+      <section class="campus-hero" aria-labelledby="hero-title">
+        <img
+          class="hero-image"
+          src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&amp;fit=crop&amp;w=1800&amp;q=85"
+          alt="A red-brick school campus building behind a green lawn and trees"
+          fetchpriority="high"
+        />
+        <div class="hero-content">
+          <p class="hero-kicker"><span aria-hidden="true"></span> MAKE ROOM FOR SOMETHING NEW</p>
+          <h1 id="hero-title">Find your thing.<br /><span>Make it Mergington.</span></h1>
+          <p class="hero-summary">Good people. New skills. Something to look forward to after class.</p>
+          <a class="hero-link" href="#activities-container">Explore activities <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-caption" aria-hidden="true">
+          <span>LEARN</span><span class="caption-divider"></span><span>MAKE</span><span class="caption-divider"></span><span>PLAY</span>
         </div>
       </section>
 
-      <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
-        <form id="signup-form">
-          <div class="form-group">
-            <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
+      <div class="page-content">
+        <section id="activities-container" class="activities-section" aria-labelledby="activities-title">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">THE GOOD STUFF HAPPENS AFTER CLASS</p>
+              <h2 id="activities-title">Find your next favorite thing</h2>
+            </div>
+            <div class="activity-total" aria-label="Number of activities">
+              <span id="activity-count">--</span>
+              <span>activities</span>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="activity">Select Activity:</label>
-            <select id="activity" required>
-              <option value="">-- Select an activity --</option>
-              <!-- Activity options will be loaded here -->
-            </select>
+
+          <div id="activities-list" class="activities-list" aria-live="polite">
+            <p class="loading-state">Loading activities...</p>
           </div>
-          <button type="submit">Sign Up</button>
-        </form>
-        <div id="message" class="hidden"></div>
-      </section>
+        </section>
+
+        <aside id="signup-container" class="signup-panel" aria-labelledby="signup-title">
+          <div class="signup-panel-kicker">
+            <span class="signup-spark" aria-hidden="true">+</span>
+            <span>YOUR NEXT CHAPTER</span>
+          </div>
+          <h2 id="signup-title">Come on in.</h2>
+          <p class="signup-description">Pick an activity, add your school email, and we'll save you a spot.</p>
+
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="email">Student email</label>
+              <input type="email" id="email" required placeholder="you@mergington.edu" autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="activity">Choose an activity</label>
+              <select id="activity" required>
+                <option value="">Select an activity</option>
+              </select>
+            </div>
+            <button class="signup-submit" type="submit">
+              <span>Join an activity</span><span aria-hidden="true">↗</span>
+            </button>
+          </form>
+
+          <div id="message" class="message hidden" role="status" aria-live="polite"></div>
+          <p class="signup-footnote"><span aria-hidden="true"></span> Your after-school plans start here.</p>
+        </aside>
+      </div>
     </main>
 
-    <footer>
-      <p>&copy; 2023 Mergington High School</p>
+    <footer class="site-footer">
+      <a class="footer-brand" href="#top">MERGINGTON HIGH SCHOOL</a>
+      <span>Make the most of your after-school hours.</span>
+      <a class="back-to-top" href="#top">BACK TO TOP ↑</a>
     </footer>
 
     <script src="app.js"></script>
